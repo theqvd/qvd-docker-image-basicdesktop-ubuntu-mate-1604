@@ -45,11 +45,11 @@ RUN chmod 755 /usr/local/bin/qvdstartx.sh /usr/local/bin/notify.sh /usr/local/bi
 #RUN mkdir -p /etc/skel/.config/xfce4/
 #COPY xfce4/ /etc/skel/.config/xfce4/
 # Disable services
-RUN for i in anacron atd cron cups-browsed kerneloops ModemManager rsyslog whoopsie wpa_supplicant; do systemctl disable $i.service; done
+#RUN for i in anacron atd cron cups-browsed kerneloops rsyslog whoopsie ;  do systemctl disable $i.service; done
 # Cleanup
 RUN echo "" > /etc/udev/rules.d/70-persistent-net.rules
 # Currently has a bug
-RUN apt-get -y remove blueman
+RUN apt-get -y remove blueman wpasupplicant modemmanager
 RUN apt-get autoremove -y
 RUN apt-get clean
 CMD echo -e "This Docker container is used as a template to create a QVD Image\n" \
