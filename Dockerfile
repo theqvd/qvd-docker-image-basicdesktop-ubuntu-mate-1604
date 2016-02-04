@@ -41,11 +41,11 @@ COPY qvdstartx.sh /usr/local/bin/qvdstartx.sh
 COPY notify.sh /usr/local/bin/notify.sh
 COPY poweroff.sh /usr/local/bin/poweroff.sh
 COPY XScreenSaver-nogl /etc/X11/app-defaults/XScreenSaver-nogl
+COPY ubuntu-mate.gschema.override /usr/share/glib-2.0/schemas/ubuntu-mate.gschema.override
+RUN glib-compile-schemas /usr/share/glib-2.0/schemas
 RUN chmod 755 /usr/local/bin/qvdstartx.sh /usr/local/bin/notify.sh /usr/local/bin/poweroff.sh
-#RUN mkdir -p /etc/skel/.config/xfce4/
-#COPY xfce4/ /etc/skel/.config/xfce4/
 # Disable services
-#RUN for i in anacron atd cron cups-browsed kerneloops rsyslog whoopsie ;  do systemctl disable $i.service; done
+RUN for i in cups-browsed  ;  do systemctl disable $i.service; done
 # Cleanup
 RUN echo "" > /etc/udev/rules.d/70-persistent-net.rules
 # Currently has a bug
