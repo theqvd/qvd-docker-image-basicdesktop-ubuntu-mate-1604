@@ -5,4 +5,4 @@
 [ -r /etc/environment ] && . /etc/environment
 [ -r /etc/timezone ] && export TZ=$(cat /etc/timezone)
 
-/usr/bin/startx $@
+/usr/bin/mate-session $@
