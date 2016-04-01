@@ -32,7 +32,9 @@ RUN apt-get update && apt-get install -y \
   evince \
   firefox \
   flashplugin-installer \
+  language-selector-gnome \
   libreoffice \
+  mate-desktop-environment-extras \
   thunderbird
 # Config
 COPY vma.conf /etc/qvd/vma.conf
