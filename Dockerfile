@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y \
   perl-qvd-client
 RUN apt-get update && apt-get install -y \
   mate-desktop-environment \
+  mate-desktop-environment-extras \
   cups \
   curl \
   evince \
@@ -34,7 +35,6 @@ RUN apt-get update && apt-get install -y \
   flashplugin-installer \
   language-selector-gnome \
   libreoffice \
-  mate-desktop-environment-extras \
   thunderbird
 # Config
 COPY vma.conf /etc/qvd/vma.conf
