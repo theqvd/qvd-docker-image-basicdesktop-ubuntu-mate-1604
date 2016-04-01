@@ -57,12 +57,12 @@ CMD echo -e "This Docker container is used as a template to create a QVD Image\n
             "QVD is Linux Remote Desktop VDI system\n" \
             "\n" \
             "To create the tar.gz file importable into QVD please use the following commands:\n" \
-	    "   sudo docker build -t theqvd/qvdimageubuntu:basicdesktop_xubuntu_1604 .\n" \
-            "   vmid=\$(sudo docker run -d -t -i theqvd/qvdimageubuntu:basicdesktop_xubuntu_1604 /bin/bash -c \"read a; echo \$a\")\n" \
-            "   docker export \$vmid  | gzip -c > qvd-image-xubuntu-16.04-basicdesktop.tgz\n" \
+	    "   sudo docker build -t theqvd/qvdimageubuntu:basicdesktop_ubuntu_mate_1604 .\n" \
+            "   vmid=\$(sudo docker run -d -t -i theqvd/qvdimageubuntu:basicdesktop_ubuntu_mate_1604 /bin/bash -c \"read a; echo \$a\")\n" \
+            "   docker export \$vmid  | gzip -c > qvd-image-ubuntu_mate-16.04-basicdesktop.tgz\n" \
             "   sudo docker kill \$vmid\n" \
             "\n" \
-            "And the importable image is qvd-image-xubuntu-16.04-basicdesktop.tgz\n" \
+            "And the importable image is qvd-image-ubuntu_mate-16.04-basicdesktop.tgz\n" \
             "\n" \
             "For more information please check: \n" \
             "  * QVD web site:  http://theqvd.com and\n" \
