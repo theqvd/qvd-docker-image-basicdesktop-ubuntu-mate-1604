@@ -7,9 +7,9 @@ log() {
 
 nxagentpid=$(pgrep nxagent)
 [ -z "$nxagentpid" ] && log "nxagent was not running nxagent pid was empty"
-nxagentuser=$(ps -ho "user" -p $nxagentpid) && exit 1
+nxagentuser=$(ps -ho "user" -p $nxagentpid)
 [ -z "$nxagentuser" ] && log "nxagent user was not present???" && exit 1
-su - $nxagentuser -c "DISPLAY=:100 gnome-screensaver-command --lock"
+su - "$nxagentuser" -c "DISPLAY=:100 gnome-screensaver-command --lock"
 
 exit 0
 
