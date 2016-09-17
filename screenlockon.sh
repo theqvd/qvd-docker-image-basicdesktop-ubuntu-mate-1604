@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/local/bin/screenlock.sh mate-screensaver-command lock
+/usr/local/bin/screenlock.sh gnome-screensaver-command lock

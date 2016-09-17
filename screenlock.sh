@@ -22,15 +22,14 @@ nxagentuser=$(ps -ho "user" -p $nxagentpid)
 
 case "$ACTION" in
   lock)
-      su - $nxagentuser -c "DISPLAY=:100 $SCREENLOCK -a -n QVD -r $ACTION"
+      su - $nxagentuser -c "DISPLAY=:100 $SCREENLOCK -a"
       ;;
   unlock)
-      su - $nxagentuser -c "DISPLAY=:100 $SCREENLOCK -d -n QVD -r $ACTION"
+      su - $nxagentuser -c "DISPLAY=:100 $SCREENLOCK -d"
       ;;
   *)
       ;;
 esac
-su - $nxagentuser -c "DISPLAY=:100 $SCREENLOCK -a -r $REASON"
 
 exit 0
 
