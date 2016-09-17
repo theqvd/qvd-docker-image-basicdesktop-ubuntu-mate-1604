@@ -43,9 +43,11 @@ COPY qvdstartx.sh /usr/local/bin/qvdstartx.sh
 COPY notify.sh /usr/local/bin/notify.sh
 COPY poweroff.sh /usr/local/bin/poweroff.sh
 COPY screenlock.sh /usr/local/bin/screenlock.sh
+COPY screenlockon.sh /usr/local/bin/screenlockon.sh
+COPY screenlockoff.sh /usr/local/bin/screenlockoff.sh
 COPY ubuntu-mate.gschema.override /usr/share/glib-2.0/schemas/ubuntu-mate.gschema.override
 RUN glib-compile-schemas /usr/share/glib-2.0/schemas
-RUN chmod 755 /usr/local/bin/qvdstartx.sh /usr/local/bin/notify.sh /usr/local/bin/poweroff.sh
+RUN chmod 755 /usr/local/bin/qvdstartx.sh /usr/local/bin/notify.sh /usr/local/bin/poweroff.sh /usr/local/bin/screenlock.sh /usr/local/bin/screenlockon.sh /usr/local/bin/screenlockoff.sh 
 # Disable services
 RUN for i in cups-browsed  ;  do systemctl disable $i.service; done
 # Cleanup
