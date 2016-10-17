@@ -23,9 +23,6 @@ LABEL description="This is a basic desktop Ubuntu VM image installation for QVD.
 ENV DEBIAN_FRONTEND noninteractive
 # packages
 RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list
-RUN add-apt-repository ppa:nilarimogard/webupd8
-RUN apt-get update && apt-get install -y \
-  perl-qvd-client
 RUN apt-get update && apt-get install -y \
   mate-desktop-environment \
   mate-desktop-environment-extras \
@@ -36,7 +33,11 @@ RUN apt-get update && apt-get install -y \
   flashplugin-installer \
   language-selector-gnome \
   libreoffice \
+  software-properties-common \
   thunderbird
+RUN add-apt-repository ppa:nilarimogard/webupd8
+RUN apt-get update && apt-get install -y \
+  perl-qvd-client
 # Config
 COPY vma.conf /etc/qvd/vma.conf
 COPY wallpaper-qvd.jpg /usr/share/wallpapers/
