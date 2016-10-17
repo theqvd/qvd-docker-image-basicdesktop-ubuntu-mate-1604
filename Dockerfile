@@ -23,7 +23,7 @@ LABEL description="This is a basic desktop Ubuntu VM image installation for QVD.
 ENV DEBIAN_FRONTEND noninteractive
 # packages
 RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list
-RUN echo "deb http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8.list
+RUN add-apt-repository ppa:nilarimogard/webupd8
 RUN apt-get update && apt-get install -y \
   perl-qvd-client
 RUN apt-get update && apt-get install -y \
