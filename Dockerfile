@@ -22,8 +22,8 @@ LABEL description="This is a basic desktop Ubuntu VM image installation for QVD.
 
 ENV DEBIAN_FRONTEND noninteractive
 # packages
-RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list
-RUN apt-get update && apt-get install -y \
+RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sources.list.d/multiverse.list && \
+  apt-get update && apt-get install -y \
   mate-desktop-environment \
   mate-desktop-environment-extras \
   cups \
@@ -34,10 +34,15 @@ RUN apt-get update && apt-get install -y \
   language-selector-gnome \
   libreoffice \
   software-properties-common \
-  thunderbird
-RUN add-apt-repository ppa:nilarimogard/webupd8
-RUN apt-get update && apt-get install -y \
-  perl-qvd-client
+  thunderbird \
+  && \
+  add-apt-repository ppa:nilarimogard/webupd8 && \
+  apt-get update && apt-get install -y \
+  perl-qvd-client \
+  && \
+  apt-get -y remove blueman wpasupplicant modemmanager && \
+  apt-get autoremove &&  apt-get clean
+
 # Config
 COPY vma.conf /etc/qvd/vma.conf
 COPY wallpaper-qvd.jpg /usr/share/wallpapers/
@@ -54,10 +59,6 @@ RUN chmod 755 /usr/local/bin/qvdstartx.sh /usr/local/bin/notify.sh /usr/local/bi
 RUN for i in cups-browsed  ;  do systemctl disable $i.service; done
 # Cleanup
 RUN echo "" > /etc/udev/rules.d/70-persistent-net.rules
-# Currently has a bug
-RUN apt-get -y remove blueman wpasupplicant modemmanager
-RUN apt-get autoremove -y
-RUN apt-get clean
 CMD echo -e "This Docker container is used as a template to create a QVD Image\n" \
             "QVD is Linux Remote Desktop VDI system\n" \
             "\n" \
