@@ -41,7 +41,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sou
   perl-qvd-client \
   && \
   apt-get -y remove blueman wpasupplicant modemmanager && \
-  apt-get autoremove &&  apt-get clean
+  apt-get autoremove -y &&  apt-get clean
 
 # Config
 COPY vma.conf /etc/qvd/vma.conf
