@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-FROM theqvd/qvdimageubuntu:minimalubuntu1604
+FROM theqvd/qvdimage-minimum-ubuntu-1604
 MAINTAINER The QVD <docker@theqvd.com>
 
 LABEL version="1.0"
