@@ -1,7 +1,7 @@
 QVD basic desktop LXC image
 ===========================
 
-This is how to build a basic desktop LXC image for QVD using Docker.
+This is how to build a basic desktop QVD using Docker.
 
 It is a basic desktop with:
  * Libreoffice
@@ -9,7 +9,10 @@ It is a basic desktop with:
  * Thunderbird
  * Evince
 
-To create the tar.gz file importable into QVD please use the following
+Support for LXC images
+======================
+
+To create the tar.gz file importable into QVD (for LXC backends) please use the following
 commands:
 
   sudo docker build -t theqvd:basicdesktop_xubuntu_1604 .
