@@ -1,4 +1,4 @@
-# Qvd client for IOS
+# Qvd Basic Desktop Image
 # Copyright (C) 2015  theqvd.com trade mark of Qindel Formacion y Servicios SL
 #
 # This program is free software: you can redistribute it and/or modify
