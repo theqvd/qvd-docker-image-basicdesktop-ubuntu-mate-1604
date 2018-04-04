@@ -32,7 +32,11 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sou
   firefox \
   flashplugin-installer \
   language-selector-gnome \
+  ldtp \
   libreoffice \
+  python-ldtp \
+  python-setuptools \
+  python-wnck \
   software-properties-common \
   thunderbird \
   && \
