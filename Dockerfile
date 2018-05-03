@@ -39,6 +39,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu xenial multiverse" > /etc/apt/sou
   python-wnck \
   software-properties-common \
   thunderbird \
+  xdg-utils \
   && \
   add-apt-repository ppa:nilarimogard/webupd8 && \
   apt-get update && apt-get install -y \
